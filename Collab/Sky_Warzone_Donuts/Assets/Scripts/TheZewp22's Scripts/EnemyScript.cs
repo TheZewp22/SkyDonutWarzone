@@ -14,7 +14,11 @@ GameObject gameManager;
 
 
 
-
+void Start()
+{
+  target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+  gameManager = GameObject.FindGameObjectWithTag("GameController");
+}
 
 void Update(){
 distance = transform.position.x - target.position.x;
@@ -38,7 +42,7 @@ health--;
 else if (other.CompareTag("Player") && other.GetComponent<PlayerController2D>().isDashing == true)
 {
 Debug.Log("Contact: Dashing");
-health--;
+health = 0;
 }
 
 
@@ -47,5 +51,4 @@ health--;
 
 
 }
-
 }

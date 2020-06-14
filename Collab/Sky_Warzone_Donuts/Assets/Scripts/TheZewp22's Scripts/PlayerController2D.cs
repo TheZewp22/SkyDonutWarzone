@@ -32,8 +32,6 @@ public bool isDashing = false;
     // Update is called once per frame
     void Update()
     {
-        moveInputv = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
-        moveInputh = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
     
         
         
@@ -76,7 +74,7 @@ public bool isDashing = false;
     void Dash()
     {
     moveSpeed = dashSpeed;
-    Time.timeScale = 0.5f;
+    
     Invoke("ResetDash", dashTime);
     isDashing = true;
     }
@@ -84,7 +82,7 @@ public bool isDashing = false;
     {
     moveSpeed = moveSpeedValue;
     isDashing = false;
-    Time.timeScale = 1f;
+    
     }
     
 
