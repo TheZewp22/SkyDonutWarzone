@@ -9,9 +9,8 @@ public Transform target;
 float distance;
 [SerializeField]
 int health;
-
-
-
+[SerializeField]
+GameObject gameManager;
 
 
 
@@ -21,14 +20,12 @@ void Update(){
 distance = transform.position.x - target.position.x;
 if (health <= 0)
 {
+gameManager.GetComponent<gameManager>().IncreaseScore();
 Destroy(gameObject);
 }
 //  Move Towards the Player's Target Hitbox
-if (distance > 10)
-{
-    Debug.Log("Distance close");
   transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-}
+
 
 }
 

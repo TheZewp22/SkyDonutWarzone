@@ -48,14 +48,14 @@ public bool isDashing = false;
         if (Input.GetKey("d"))
         {
         rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
-        renderer.flipX = false;
+        
         } else if (Input.GetKey("a"))
         {
         rb2d.velocity = new Vector2(-moveSpeed, rb2d.velocity.y);
-        renderer.flipX = true;
+        
         } else {
         rb2d.velocity = new Vector2(0, rb2d.velocity.y);
-        renderer.flipX = false;
+        
         }
 
         if (Input.GetKey("w"))
