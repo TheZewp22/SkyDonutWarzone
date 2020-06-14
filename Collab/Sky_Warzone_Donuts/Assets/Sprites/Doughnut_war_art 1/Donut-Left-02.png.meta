@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 84308f7b6dc71469782172ffab489b86
+guid: 94d27ffa2d1344645a2e5f3c9dca9742
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -1917870765644107007
-    second: Muffin-Idle_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -88,28 +85,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Muffin-Idle_0
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 127
-        width: 255
-        height: 224
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1033da033ba5265e0800000000000000
-      internalID: -1917870765644107007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
