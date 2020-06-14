@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController2D : MonoBehaviour
 {
 //  Rigidbody2D
+gameManager manager;
 Rigidbody2D rb2d;
 SpriteRenderer renderer;
 float moveInputv;
@@ -18,6 +19,8 @@ float dashSpeed = 20;
 [SerializeField]
 float dashTime = 5;
 public bool isDashing = false;
+[SerializeField]
+public int health = 5;
 
 
 
@@ -32,7 +35,11 @@ public bool isDashing = false;
     // Update is called once per frame
     void Update()
     {
-    
+    if (health <= 0)
+    {
+        manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameManager>();
+        manager.GameOver();
+    }
         
         
 
@@ -85,6 +92,17 @@ public bool isDashing = false;
     
     }
     
+    void OnTriggerEnter2D(Collider2D other)
+    {
+    if (other.CompareTag("Enemy"))
+    {
+    health--;
+
+    }
+
+
+
+    }
 
 
 }

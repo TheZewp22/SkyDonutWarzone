@@ -10,12 +10,10 @@ public class gameManager : MonoBehaviour
 public TextMeshProUGUI scoreText;
 public static int score;
 public GameObject pauseMenu;
+public GameObject gameOverMenu;
+public TextMeshProUGUI gscoreText;
 
-
-  void Start()
-  {
-
-  }
+  
 
   void Update()
   {
@@ -42,8 +40,18 @@ public GameObject pauseMenu;
   Time.timeScale = 1f;
   }
 
-
-
+  public void GameOver()
+  {
+    gscoreText.text = score.ToString();
+    gameOverMenu.SetActive(true);
+    
+  }
+  public void Restart()
+  {
+    gameOverMenu.SetActive(false);
+    Time.timeScale = 1f;
+    SceneManager.LoadScene(1);
+  }
 
 
 
