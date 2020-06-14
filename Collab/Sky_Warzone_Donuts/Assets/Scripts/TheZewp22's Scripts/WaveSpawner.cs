@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
 
-int wave = 10;
+int wave = 5;
 
 //  Enemy Ref
 public GameObject enemy;
@@ -27,7 +27,7 @@ float waveCountdown;
     {
         if (waveCountdown <= 0f)
         {
-        Wave ();
+        StartCoroutine(Instantiate ());
         } else {
         Debug.Log(waveCountdown);
         waveCountdown -= Time.deltaTime;
@@ -35,23 +35,26 @@ float waveCountdown;
 
     }
 
-    void Wave()
+
+
+
+
+    IEnumerator Instantiate ()
     {
     if (waveCountdown == 0);
     {
     waveCountdown = TimeBetweenWaves;
     for (int i = 0; i < wave; i++)
     {
+        yield return new WaitForSeconds (3f);
         rand = Random.Range(0, spawnPoint.Length);
        Transform spawnPointPicked = spawnPoint[rand];
         Instantiate(enemy, spawnPointPicked.position, spawnPointPicked.rotation);
         wave++;
     }
-        
-    } 
     }
 }
-
+}
 
 
 
